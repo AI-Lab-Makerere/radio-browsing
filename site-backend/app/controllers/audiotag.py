@@ -36,11 +36,11 @@ class AudioTagView(Resource):
 
             for mtag in range(len(ntag)):
 
-                # print(ntag[mtag].toString())
-                val = ntag[mtag].toString()
+                # print(ntag[mtag].serialize())
+                val = ntag[mtag].serialize()
                 # print(tags[int(ntag[mtag])])
                 #print(tags[val-1].name)
-                multi_tag.append(tags[val-1].name)
+                multi_tag.append(tags[val-1].tag_name)
                 #print("MultiTaG Array:", multi_tag)
             # s_tag.append(multi_tag)
             all_data["Tags"].append(multi_tag)
@@ -80,14 +80,14 @@ class AudioTagView(Resource):
             return dict(status="fail", message=f"No audio named {audio_name}!"), 404
 
         if not tag:
-            return dict(status="fail", message=f"No audio named {tag_name}!"), 404
+            return dict(status="fail", message=f"No tag with name {tag_name}!"), 404
 
-        audio_id = audio.serialize
-        tag_id = tag.serialize
+        audio_id = audio.serialize()
+        tag_id = tag.serialize()
 
         serialized_data = {
             "audio_id": audio_id["id"],
-            "tag_id": tag["id"]
+            "tag_id": tag_id["id"]
         }
 
         valid_data, errors = audiotagoutschema.load(serialized_data)

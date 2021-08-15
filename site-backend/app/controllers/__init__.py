@@ -1,5 +1,5 @@
 from .index import IndexView
-from .search import SearchView
+from .search import TagSearchView, TopicSearchView
 from .tag import TagView
 from .audio import AudioView
 from .comment import CommentView

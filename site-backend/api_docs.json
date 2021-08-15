@@ -16,7 +16,7 @@
         "tags": [
           "tag_search"
         ],
-        "summary": "Success",
+        "summary": "searches for a particular tag and returns all audios with that tag",
         "consumes": [
           "application/json"
         ],
@@ -248,7 +248,7 @@
             "description": "invalid input, object invalid or missing fields"
           },
           "404": {
-            "description": "email not found"
+            "description": "email or audio or both dont exist!"
           },
           "500": {
             "description": "internal server error"
@@ -487,6 +487,41 @@
           }
         }
       }
+    },
+    "/search_topic": {
+      "post": {
+        "tags": [
+          "topics"
+        ],
+        "summary": "Returns audios under a given topic",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [          
+          {
+            "in": "body",
+            "name": "Topic params",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/topic"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successfully returns all audios under a topic"
+          },
+          "402": {
+            "description": "invalid input, object invalid or missing field"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -551,10 +586,10 @@
     "user": {
       "type": "object",
       "required": [
-        "email"
+        "user_email"
       ],
       "properties": {
-        "email": {
+        "user_email": {
           "type": "string",
           "example": "myemail@example.com"
         }
@@ -566,9 +601,31 @@
         "topic_name"
       ],
       "properties": {
-        "email": {
+        "topic_name": {
           "type": "string",
-          "example": "myemail@email.com"
+          "example": "topicname"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "user_name",
+        "audio_name",
+        "comment"
+      ],
+      "properties": {
+        "user_email": {
+          "type": "string",
+          "example": "example@email.com"
+        },
+        "audio_name": {
+          "type": "string",
+          "example": "audio.format"
+        },
+        "comment": {
+          "type": "string",
+          "example": "this is a test comment"
         }
       }
     }

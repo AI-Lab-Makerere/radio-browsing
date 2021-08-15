@@ -23,8 +23,15 @@ class User(RootModel):
     def __repr__(self):
         return "<User: {}>".format(self.email)
 
-    @property
+    
     def serialize(self):
         return {
         'id': self.id
+        }
+
+    @property
+    def transform(self):
+        return {
+        'id': self.id,
+        'user_email': self.user_email 
         }

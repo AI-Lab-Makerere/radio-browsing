@@ -26,10 +26,17 @@ class TagView(Resource):
 
         data = request.get_json()
 
+        tag_name = data["tag_name"]
+
+        existing_tag = Tag.find_first(tag_name=tag_name)
+
+        if existing_tag:
+            return dict(status='fail', message="tag already exists!"), 402
+
         valid_data, errors = tagin_schema.load(data)
 
         if errors:
-            return dict(status='fail', message=errors), 404
+            return dict(status='fail', message=errors), 402
         
         topic_name = data["topic_name"]
        
@@ -38,9 +45,9 @@ class TagView(Resource):
         
 
         if not topic:
-            return dict(status='fail', message='Topic doesnt exist!'), 500
+            return dict(status='fail', message='Topic doesnt exist!'), 404
 
-        topic_id = topic.serialize
+        topic_id = topic.serialize()
 
         serialized_data = {      
             "tag_name" :  valid_data["tag_name"],
@@ -50,7 +57,7 @@ class TagView(Resource):
         clean_data, errors = tagout_schema.load(serialized_data)
         
         if errors:
-            return dict(status='fail', message=errors), 402
+            return dict(status='fail', message=errors), 500
 
         tag = Tag(**clean_data)
 

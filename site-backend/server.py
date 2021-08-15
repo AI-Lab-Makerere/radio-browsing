@@ -41,7 +41,7 @@ def create_app(config_name):
 
     # swagger
     app.config['SWAGGER'] = {
-        'title': 'Atina Glow Initiatives Blog',
+        'title': 'NLP Audio Search Engine API',
         'uiversion': 2
     }
 

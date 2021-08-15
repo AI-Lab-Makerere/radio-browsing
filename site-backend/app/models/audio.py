@@ -7,8 +7,15 @@ class Audio(RootModel):
     id = db.Column(db.Integer, primary_key=True)
     audio_name = db.Column(db.String,nullable=False)
 
-    @property
+    
     def serialize(self):
         return {
         'id': self.id
+        }
+
+    @property
+    def transform(self):
+        return {
+        'id': self.id,
+        'audio_name': self.audio_name
         }

@@ -34,9 +34,9 @@ class Development(Base):
     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_DEV_URI")
 
     #OAUTH_CREDENTIALS = {
-    #    'service': {
-    #        'id': '',
-    #        'secret': ''
+    #    'facebook': {
+    #        'id': '743451769785422',
+    #        'secret': 'a60df688c982880194dbc9fcd969b5c8'
     #    }
     #}
 

@@ -11,8 +11,13 @@ class Topic(RootModel):
     topic_name=db.Column(db.String(20),nullable=False)
     
 
-    @property
     def serialize(self):
+        return {
+        'id': self.id
+        }
+
+    @property
+    def transform(self):
         return {
         'id': self.id,
         'topic_name': self.topic_name

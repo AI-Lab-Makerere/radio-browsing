@@ -13,12 +13,20 @@ class AudioTag(RootModel):
     tags = db.relationship('Tag',foreign_keys=[tag_id], backref="audiotag" ,lazy=True, uselist=False)
     audios = db.relationship('Audio',foreign_keys=[audio_id], backref="audiotag" ,lazy=True, uselist=False)
 
-    def __init__(self, id):
-        """ initialize with name """
+    def __init__(self, tag_id, audio_id):
+        """ initialize with tag_id """
         self.tag_id = tag_id
+        self.audio_id = audio_id
 
     def __repr__(self):
-        return "{}".format(self.tag_id)
+        return "<Tag ID: {}>".format(self.tag_id)
 
-    def toString(self):
+    def serialize(self):
         return self.tag_id
+
+    @property
+    def transform(self):
+        return {
+        'audio_id': self.audio_id,
+        'tag_id': self.tag_id
+        }

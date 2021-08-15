@@ -18,9 +18,18 @@ class Comment(RootModel):
     users = db.relationship('User',foreign_keys=[user_id] ,lazy=True, uselist=False)
 
 
-    @property
+    
     def serialize(self):
         return {
         'id': self.id,
+        'comment': self.comment
+        }
+
+    @property
+    def transform(self):
+        return {
+        'id': self.id,
+        'audio_id': self.audio_id,
+        'user_id': self.user_id,
         'comment': self.comment
         }
