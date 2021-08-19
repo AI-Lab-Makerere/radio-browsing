@@ -62,6 +62,23 @@ Last Update: Jan 13, 2018
   margin: 0;
   padding: 0; }
 
+.card-bg{
+  background-color:#d5d5db;
+  box-shadow: #343535;
+}  
+
+.audio {
+  width:250px;
+  height:55px;
+  opacity: .7;
+  margin-left: -5px;
+  
+}
+.audio .audioplayer-time{
+  display: none;
+}
+
+
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
@@ -76,7 +93,7 @@ h4,
 h5,
 h6 {
   font-family: "Oswald", sans-serif;
-  color:white;
+  color: #191919;
   line-height: 1.4;
   font-weight: 500; }
 
@@ -128,7 +145,6 @@ ul {
     background-color: rgba(0, 0, 0, 0.65); }
 
 .bg-img {
-  background-image: url(assets/img/bg-img/34.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -493,7 +509,7 @@ input:focus {
         margin-top: 15px; } }
 
 .classy-nav-container {
-  background-color: transparent;
+  background-color: white;
   padding: 0; }
   .classy-nav-container .classy-navbar {
     -webkit-transition-duration: 500ms;
@@ -516,11 +532,11 @@ input:focus {
       z-index: 1;
       font-size: 14px;
       text-transform: uppercase;
-      color: #ffffff;
+      color: #050505;
       font-weight: 600; }
       @media only screen and (min-width: 768px) and (max-width: 991px) {
         .classy-nav-container .classy-navbar .classynav ul li a {
-          color: #191919; } }
+          color: #0c0c0c; } }
       @media only screen and (max-width: 767px) {
         .classy-nav-container .classy-navbar .classynav ul li a {
           color: #191919; } }
@@ -1362,7 +1378,7 @@ input:focus {
     .razo-post-share a.twitter {
       background-color: #41a1f6; }
     .razo-post-share a.google-plus {
-      background-color: #f43535; }
+      background-color: #cacacf; }
     .razo-post-share a.pinterest {
       background-color: #8f6247; }
     .razo-post-share a.instagram {
@@ -1524,7 +1540,7 @@ input:focus {
   position: relative;
   z-index: 1;
   padding: 20px 30px;
-  background-color: #0c0c0c;
+  background-color: #cacacf;
   -webkit-transition-duration: 500ms;
   -o-transition-duration: 500ms;
   transition-duration: 500ms;
@@ -1587,6 +1603,7 @@ input:focus {
         color: #a6a6a6; }
     .single-music-chart .music-content .audio-player {
       position: relative;
+      margin-left: 0px;
       z-index: 1; }
       .single-music-chart .music-content .audio-player .audioplayer {
         margin: 0;
@@ -1600,11 +1617,12 @@ input:focus {
       .single-music-chart .music-content .audio-player .audioplayer-bar {
         display: none; }
       .single-music-chart .music-content .audio-player .audioplayer-playpause {
-        width: 34px;
-        height: 34px;
-        border: 3px solid #ffffff; }
+        width: 50px;
+        height: 50px;
+        border: 3px solid white;   
+      }
       .single-music-chart .music-content .audio-player .audioplayer:not(.audioplayer-playing) .audioplayer-playpause a {
-        border-left: 12px solid #ffffff; }
+        border-left: 12px solid white; }
     .single-music-chart .music-content .audioplayer-playing .audioplayer-playpause {
       border: 3px solid #dc2878; }
     .single-music-chart .music-content .audioplayer-playing .audioplayer-playpause a::before,
@@ -1621,7 +1639,7 @@ input:focus {
     .single-music-chart .music-price .razo-btn {
       min-width: 100%; } }
   .single-music-chart:hover, .single-music-chart:focus {
-    background-color: #1e1e1e; }
+    background-color: whitesmoke; }
     .single-music-chart:hover .razo-btn, .single-music-chart:focus .razo-btn {
       background-color: #dc2878;
       color: #ffffff; }
@@ -2248,3 +2266,81 @@ input:focus {
     font-size: 14px; }
 
 /*# sourceMappingURL=style.css.map */
+
+.faq .faq-list {
+  padding: 0 100px;
+}
+
+.faq .faq-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.faq .faq-list li + li {
+  margin-top: 15px;
+}
+
+.faq .faq-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+}
+
+.faq .faq-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+.faq .faq-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #87c1ea;
+}
+
+.faq .faq-list .icon-show, .faq .faq-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list a.collapsed {
+  color: #343a40;
+}
+
+.faq .faq-list a.collapsed:hover {
+  color: #2487ce;
+}
+
+.faq .faq-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .faq .faq-list {
+    padding: 0;
+  }
+}
