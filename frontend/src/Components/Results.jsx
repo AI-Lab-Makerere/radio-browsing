@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 import { API } from '../utils';
-import Audio from './audio';
 import Header from './header';
+import AudioCard from './box';
 
 const Results = (props) => {
     const [audios, setAudios] = useState([])
@@ -31,19 +31,17 @@ const Results = (props) => {
     return(
         <div>
             <Header title={'Results'} />
-            <div className="container">
-            <div className="row">
-                
-                    {audios.length > 0 ? audios.map((audio) => (
-                        <div >
-                            <Audio id={audio.id} audio_name={audio.audio_name} />
-                            <br/>
-                        </div>
+            <section id="hero" className="d-flex align-items-center">
+            <div className="container position-relative" data-aos="fade-up" data-aos-delay="100">
+                <div className="row icon-boxes">
+                    {audios.length > 0 ? audios.map((audio) => (   
+                        <AudioCard id={audio.id} name={audio.audio_name} />
                     ))
-                    : 'No such Audios' 
+                    : <h2 style={{marginTop:'100px', color:'black'}}>No such Audios</h2> 
                     }
                 </div>
             </div>
+            </section>
         </div>
     )
 

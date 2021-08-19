@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Results from "./Components/Results";
 import PageWrapper from "./Components/PageWrapper";
+import Box from "./Components/box";
 
 function App(){
   return (
