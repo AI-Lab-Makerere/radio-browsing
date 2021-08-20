@@ -6,24 +6,24 @@ class Header extends Component {
     render(){
         return(
            <div>
-               <header id="header" class="fixed-top">
-                    <div class="container d-flex align-items-center justify-content-between">
+               <header id="header" className="fixed-top">
+                    <div className="container d-flex align-items-center justify-content-between">
 
-                    <h1><div class="count-box" > 
+                    <h1><div className="count-box" > 
                         <a href="index.html"> 
                         <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="2" className="purecounter"></span>
                         </a>
                         </div>
-                        Results
+                        {this.props.title}
                         
                     </h1>
             
-                    <nav id="navbar" class="navbar">
+                    <nav id="navbar" className="navbar">
                         <ul>
-                        <li><a class="nav-link scrollto active" href="#">Search</a></li>
-                        <li><a class="nav-link scrollto" href="/box">Tags</a></li>
+                        <li><a className="nav-link scrollto active" href="/drag">Search</a></li>
+                        <li><a className="nav-link scrollto" href="/tags">Tags</a></li>
                         </ul>  
-                        <i class="bi bi-list mobile-nav-toggle"></i>
+                        <i className="bi bi-list mobile-nav-toggle"></i>
                     </nav>
 
                     </div>
