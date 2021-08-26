@@ -9,7 +9,8 @@ const Tag = ({name, index, id, tag_type, onDropTag}) => {
         item: {
             type: tag_type,
             index,
-            id
+            id,
+            name
         },
         end:  (item, monitor) => {
             const dropResult = monitor.getDropResult()

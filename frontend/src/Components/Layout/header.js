@@ -19,7 +19,7 @@ const Header = (props) => {
 
                     <nav id="navbar" className="navbar">
                         <ul>
-                            <li><a className="nav-link scrollto active" href="/drag">Search</a></li>
+                            <li><a className="nav-link scrollto active" href="/">Search</a></li>
                             <li><a className="nav-link scrollto" href="/tags">Tags</a></li>
                         </ul>
                         <i className="bi bi-list mobile-nav-toggle"></i>

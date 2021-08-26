@@ -58,6 +58,25 @@ const Results = (props) => {
             setLoading(false)
         })
     }
+
+    const getAudiosBySelected = async () => {
+        await API.post(
+            '/search_tag',
+            {
+                tag_name: props.location.state.selected
+            }
+        )
+        .then((response) => {
+            setAudios(response.data.data.Audios)
+            //console.log(response.data.data.Audios)
+            setLoading(false)
+            //console.log(`lenght ${audios.length}`)
+        })
+        .catch((error)=>{
+            console.log(`error occurred ${error}`)
+            setLoading(false)
+        })
+    }
     
     const selector = () => {
         if (!props.location.state) {
@@ -68,6 +87,9 @@ const Results = (props) => {
         }
         else if (props.location.state.tag_name) {
             getAudiosByTag()
+        }
+        else if (props.location.state.selected) {
+            getAudiosBySelected()
         }
         else {
             getAudios()
