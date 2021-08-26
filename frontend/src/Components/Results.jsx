@@ -1,9 +1,6 @@
-
-import { useEffect } from 'react';
-import { useState } from 'react';
-
+import React , { useState, useEffect } from "react"
 import { API } from '../utils';
-import Header from './header';
+import Header from './Layout/header';
 import AudioCard from './box';
 
 const Results = (props) => {
@@ -14,9 +11,9 @@ const Results = (props) => {
         await API.get('/search/audios')
             .then((response) => {
                 setAudios(response.data.data.audios)
-                console.log(response.data.data.audios)
+                //console.log(response.data.data.Audios)
                 setLoading(false)
-                console.log(`lenght ${audios.length}`)
+                //console.log(`lenght ${audios.length}`)
             })
             .catch((error)=>{
                 console.log(`error occurred ${error}`)
@@ -24,8 +21,62 @@ const Results = (props) => {
             })
     }
 
+    const getAudiosByTag = async () => {
+        await API.post(
+            '/search_tag',
+            {
+                tag_name: props.location.state.tag_name
+            }
+            )
+            .then((response) => {
+                setAudios(response.data.data.Audios)
+                //console.log(response.data.data.Audios)
+                setLoading(false)
+                //console.log(`lenght ${audios.length}`)
+            })
+            .catch((error)=>{
+                console.log(`error occurred ${error}`)
+                setLoading(false)
+            })
+    }
+
+    const getAudiosByTopic = async () => {
+        await API.post(
+            '/search_topic',
+            {
+                topic_name: props.location.state.topic_name
+            }
+        )
+        .then((response) => {
+            setAudios(response.data.data.Audios)
+            //console.log(response.data.data.Audios)
+            setLoading(false)
+            //console.log(`lenght ${audios.length}`)
+        })
+        .catch((error)=>{
+            console.log(`error occurred ${error}`)
+            setLoading(false)
+        })
+    }
+    
+    const selector = () => {
+        if (!props.location.state) {
+            getAudios()
+        }
+        else if (props.location.state.topic_name) {
+            getAudiosByTopic()
+        }
+        else if (props.location.state.tag_name) {
+            getAudiosByTag()
+        }
+        else {
+            getAudios()
+        }
+
+    }
+
     useEffect(()=>{
-        getAudios()
+        selector()
     },[])
 
     return(
