@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .audio{
-  margin-left: 20px;
+  margin-left: 15px;
   width: 230px;
   height: 50px;
   margin-top: 10px;
@@ -432,7 +432,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .container {
-  padding-top: 80px;
+  padding-top: 0px;
 }
 
 #hero h1 {
@@ -469,11 +469,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .icon-boxes {
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 #hero .icon-box {
-  padding: 50px 30px;
+  padding: 8px 20px;
   position: relative;
   overflow: hidden;
   background: #fff;
@@ -486,7 +486,9 @@ h1, h2, h3, h4, h5, h6 {
 #hero .icon-box .title {
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 18px;
+  
+  padding-left: 0px;
+  padding-top: 10px;
 }
 
 #hero .icon-box .title a {
@@ -501,8 +503,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .icon-box .icon {
-  margin-bottom: 20px;
-  padding-top: 10px;
+  margin-bottom: 0px;
+  padding-top: 8px;
+  padding-left: 0px;
+  padding-right: 0px;
   /*display: inline-block;*/
   transition: all 0.3s ease-in-out;
   font-size: 36px;
@@ -1771,6 +1775,7 @@ section {
   font-size: 14px;
   background: #f8fbfe;
   box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.08);
+
 }
 
 #footer .footer-top {
@@ -1922,134 +1927,4 @@ section {
 
 
 
-
-
-.single-music-chart {
-  position: relative;
-  z-index: 1;
-  padding: 20px 30px;
-  background-color: #0c0c0c;
-  -webkit-transition-duration: 500ms;
-  -o-transition-duration: 500ms;
-  transition-duration: 500ms;
-  border-bottom: 1px solid #343535; }
-  .single-music-chart:first-child {
-    border-radius: 3px 3px 0 0; }
-  .single-music-chart:last-child {
-    border-radius: 0 0 3px 3px;
-    border-bottom: none; }
-  @media only screen and (max-width: 767px) {
-    .single-music-chart {
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap; } }
-  .single-music-chart .music-content {
-    position: relative;
-    z-index: 1; }
-    @media only screen and (max-width: 767px) {
-      .single-music-chart .music-content {
-        margin-bottom: 15px; } }
-    .single-music-chart .music-content .sl-number h5 {
-      color: #ffffff;
-      margin-bottom: 0;
-      margin-right: 20px; }
-    .single-music-chart .music-content .music-thumb {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 100px;
-      flex: 0 0 100px;
-      max-width: 100px;
-      width: 100px;
-      margin-right: 15px; }
-      @media only screen and (min-width: 768px) and (max-width: 991px) {
-        .single-music-chart .music-content .music-thumb {
-          -webkit-box-flex: 0;
-          -ms-flex: 0 0 70px;
-          flex: 0 0 70px;
-          max-width: 70px;
-          width: 70px; } }
-      @media only screen and (max-width: 767px) {
-        .single-music-chart .music-content .music-thumb {
-          -webkit-box-flex: 0;
-          -ms-flex: 0 0 50px;
-          flex: 0 0 50px;
-          max-width: 50px;
-          width: 50px; } }
-      .single-music-chart .music-content .music-thumb img {
-        border-radius: 3px; }
-    .single-music-chart .music-content .music-title h5 {
-      color: #ffffff;
-      margin-bottom: 0; }
-      @media only screen and (min-width: 768px) and (max-width: 991px) {
-        .single-music-chart .music-content .music-title h5 {
-          font-size: 16px; } }
-      @media only screen and (max-width: 767px) {
-        .single-music-chart .music-content .music-title h5 {
-          font-size: 12px; } }
-      @media only screen and (min-width: 480px) and (max-width: 767px) {
-        .single-music-chart .music-content .music-title h5 {
-          font-size: 14px; } }
-      .single-music-chart .music-content .music-title h5 span {
-        color: #a6a6a6; }
-    .single-music-chart .music-content .audio-player {
-      position: relative;
-      z-index: 1; }
-      .single-music-chart .music-content .audio-player .audioplayer {
-        margin: 0;
-        padding: 0;
-        border: none;
-        margin-right: 15px;
-        height: auto;
-        background-color: transparent; }
-      .single-music-chart .music-content .audio-player .audioplayer-time,
-      .single-music-chart .music-content .audio-player .audioplayer-volume,
-      .single-music-chart .music-content .audio-player .audioplayer-bar {
-        display: none; }
-      .single-music-chart .music-content .audio-player .audioplayer-playpause {
-        width: 34px;
-        height: 34px;
-        border: 3px solid #ffffff; }
-      .single-music-chart .music-content .audio-player .audioplayer:not(.audioplayer-playing) .audioplayer-playpause a {
-        border-left: 12px solid #ffffff; }
-    .single-music-chart .music-content .audioplayer-playing .audioplayer-playpause {
-      border: 3px solid #dc2878; }
-    .single-music-chart .music-content .audioplayer-playing .audioplayer-playpause a::before,
-    .single-music-chart .music-content .audioplayer-playing .audioplayer-playpause a::after {
-      background-color: #dc2878; }
-  @media only screen and (max-width: 767px) {
-    .single-music-chart .music-price {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-      flex: 0 0 100%;
-      max-width: 100%;
-      width: 100%; } }
-  @media only screen and (max-width: 767px) {
-    .single-music-chart .music-price .razo-btn {
-      min-width: 100%; } }
-  .single-music-chart:hover, .single-music-chart:focus {
-    background-color: #1e1e1e; }
-    .single-music-chart:hover .razo-btn, .single-music-chart:focus .razo-btn {
-      background-color: #dc2878;
-      color: #ffffff; }
-  .single-music-chart.style-2 {
-    background-color: #ffffff;
-    border-bottom: none; }
-    .single-music-chart.style-2 .music-content {
-      position: relative;
-      z-index: 1; }
-      .single-music-chart.style-2 .music-content .sl-number h5 {
-        color: #191919; }
-      .single-music-chart.style-2 .music-content .music-title h5 {
-        color: #191919; }
-        .single-music-chart.style-2 .music-content .music-title h5 span {
-          color: #a6a6a6; }
-      .single-music-chart.style-2 .music-content .audio-player .audioplayer-playpause {
-        border: 3px solid #191919; }
-      .single-music-chart.style-2 .music-content .audio-player .audioplayer:not(.audioplayer-playing) .audioplayer-playpause a {
-        border-left: 12px solid #191919; }
-      .single-music-chart.style-2 .music-content .audioplayer-playing .audioplayer-playpause {
-        border: 3px solid #dc2878; }
-      .single-music-chart.style-2 .music-content .audioplayer-playing .audioplayer-playpause a::before,
-      .single-music-chart.style-2 .music-content .audioplayer-playing .audioplayer-playpause a::after {
-        background-color: #dc2878; }
-    .single-music-chart.style-2:hover, .single-music-chart.style-2:focus {
-      background-color: #f2f4f5; }
 
