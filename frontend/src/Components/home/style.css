@@ -1,0 +1,169 @@
+html, body {
+    font-size: 1rem;
+  }
+.radioBox {
+  margin: 50px auto;
+}
+.radioBox > img {
+  margin: 0 auto;
+  display: block;
+}
+.buttonBox {
+  max-width: 290px;
+  margin: -45px auto;
+}
+
+button[type="button"] {
+  height: 36px;
+  line-height: 27px;
+  background: #f2f2f2 -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+  border: 1px solid #f2f2f2;
+  border-radius: 4px;
+  color: #5f6368;
+  cursor: pointer;
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  margin: 11px 4px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+}
+button[type="button"]:hover {
+  background: #f8f8f8 -webkit-linear-gradient(top, #f8f8f8, #f1f1f1);
+  border: 1px solid #c6c6c6;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: #222;
+}
+.SearchBox {
+  background: #fff;
+  display: flex;
+  border: 1px solid #dfe1e5;
+  box-shadow: none;
+  border-radius: 24px;
+  z-index: 3;
+  height: 40px;
+  margin: 10px auto;
+  width: 482px;
+}
+.SearchBox:hover {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+}
+.SearchBox > div {
+  flex: 1;
+  display: flex;
+  padding: 5px 8px 0 14px;
+}
+.SearchIcon {
+  display: flex;
+  align-items: center;
+  padding-right: 13px;
+  margin: -2px auto 0;
+}
+.SearchIcon > span {
+  color: #9aa0a6;
+  height: 20px;
+  width: 20px;
+  margin-top: -5px;
+  display: inline-block;
+  fill: currentColor;
+  line-height: 24px;
+  position: relative;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+.SearchIcon > span svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.InputBox {
+  flex-wrap: wrap;
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+  padding: 0;
+  word-wrap: break-word;
+  outline: none;
+  display: flex;
+  -webkit-tap-highlight-color: transparent;
+  line-height: 32px;
+  background-size: 20px 20px;
+  height: 20px;
+  width: 27px;
+  margin-top: 0;
+  color: transparent;
+  flex: 100%;
+  white-space: pre;
+}
+.InputBox > div {
+  color: transparent;
+  flex: 100%;
+  white-space: pre;
+  font: 16px arial, sans-serif;
+  line-height: 34px;
+  height: 34px !important;
+}
+.InputBox > input {
+  background-color: transparent;
+  border: none;
+  margin-top: -40px;
+  margin-right: 10px;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.87);
+  word-wrap: break-word;
+  outline: none;
+  display: flex;
+  flex: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+.MicroBox {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  flex: 1 0 auto;
+  cursor: pointer;
+  align-items: center;
+  border: 0;
+  outline: none;
+  padding: 5px 8px;
+  width: 24px;
+  margin: 0 -8px;
+  background: transparent;
+  background-size: 20px 20px;
+}
+.MicroBox > div {
+  flex: 1 0 auto;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  outline: none;
+  padding: 5px 8px;
+  width: 24px;
+  line-height: 44px;
+  margin: 5px -12px;
+}
+.MicroBox > span {
+  background: url("../../images/radiologo.png") 0 0 no-repeat;
+  height: 24px;
+  width: 24px;
+  background-size: 24px;
+  vertical-align: middle;
+}
+.MicroBox span {
+  background: url("../../images/radiologo.png") 0 0 no-repeat;
+  height: 24px;
+  width: 24px;
+  background-size: 24px;
+  vertical-align: middle;
+}
+.minidiv {
+  line-height: 32px;
+  background-size: 20px 20px;
+  height: 20px;
+  width: 27px;
+  margin-top: 0;
+}
