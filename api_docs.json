@@ -13,16 +13,10 @@
   "paths": {
     "/search_tag": {
       "post": {
-        "tags": [
-          "tag_search"
-        ],
+        "tags": ["tag_search"],
         "summary": "searches for a particular tag and returns all audios with that tag",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "body",
@@ -48,13 +42,9 @@
     },
     "/search/tags": {
       "get": {
-        "tags": [
-          "tag_search"
-        ],
+        "tags": ["tag_search"],
         "summary": "returns all tags",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "successfully returns all tags"
@@ -71,16 +61,10 @@
         }
       },
       "post": {
-        "tags": [
-          "tag_search"
-        ],
+        "tags": ["tag_search"],
         "summary": "adds a new tag",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "body",
@@ -107,13 +91,9 @@
         }
       },
       "delete": {
-        "tags": [
-          "tag_search"
-        ],
+        "tags": ["tag_search"],
         "summary": "Deletes tag",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "header",
@@ -145,13 +125,9 @@
     },
     "/search/audios": {
       "get": {
-        "tags": [
-          "audios"
-        ],
+        "tags": ["audios"],
         "summary": "returns all audios",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "successfully returns all audios"
@@ -165,16 +141,10 @@
         }
       },
       "post": {
-        "tags": [
-          "audios"
-        ],
+        "tags": ["audios"],
         "summary": "adds new audio",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "body",
@@ -200,13 +170,9 @@
     },
     "/search/reviews": {
       "get": {
-        "tags": [
-          "reviews"
-        ],
+        "tags": ["reviews"],
         "summary": "returns all reviews about audios",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "successfully returns all reviews"
@@ -220,16 +186,10 @@
         }
       },
       "post": {
-        "tags": [
-          "reviews"
-        ],
+        "tags": ["reviews"],
         "summary": "adds a new review to an audio",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "body",
@@ -256,13 +216,9 @@
         }
       },
       "delete": {
-        "tags": [
-          "reviews"
-        ],
+        "tags": ["reviews"],
         "summary": "Deletes single review",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "header",
@@ -294,16 +250,10 @@
     },
     "/search": {
       "get": {
-        "tags": [
-          "search"
-        ],
+        "tags": ["search"],
         "summary": "returns all audios and tags",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "successfully retrieved all data"
@@ -317,16 +267,10 @@
         }
       },
       "post": {
-        "tags": [
-          "search"
-        ],
+        "tags": ["search"],
         "summary": "searches for a particular audio and adds tag to it",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "body",
@@ -352,13 +296,9 @@
     },
     "/users": {
       "get": {
-        "tags": [
-          "users"
-        ],
+        "tags": ["users"],
         "summary": "returns all users",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "successfully returns all users "
@@ -372,16 +312,10 @@
         }
       },
       "post": {
-        "tags": [
-          "users"
-        ],
+        "tags": ["users"],
         "summary": "adds a new user",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "body",
@@ -407,13 +341,9 @@
     },
     "/topics": {
       "get": {
-        "tags": [
-          "topics"
-        ],
+        "tags": ["topics"],
         "summary": "returns all topics",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "successfully gets all topics"
@@ -427,17 +357,11 @@
         }
       },
       "post": {
-        "tags": [
-          "topics"
-        ],
+        "tags": ["topics"],
         "summary": "Adds a new topic",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [          
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
           {
             "in": "body",
             "name": "Topic params",
@@ -460,13 +384,9 @@
         }
       },
       "delete": {
-        "tags": [
-          "topics"
-        ],
+        "tags": ["topics"],
         "summary": "Deletes a topic",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "in": "header",
@@ -490,17 +410,11 @@
     },
     "/search_topic": {
       "post": {
-        "tags": [
-          "topics"
-        ],
+        "tags": ["topics"],
         "summary": "Returns audios under a given topic",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [          
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
           {
             "in": "body",
             "name": "Topic params",
@@ -527,9 +441,7 @@
   "definitions": {
     "tag": {
       "type": "object",
-      "required": [
-        "tag_name"
-      ],
+      "required": ["tag_name"],
       "properties": {
         "tag_name": {
           "type": "string",
@@ -539,10 +451,7 @@
     },
     "new_tag": {
       "type": "object",
-      "required": [
-        "tag_name",
-        "topic_name"
-      ],
+      "required": ["tag_name", "topic_name"],
       "properties": {
         "tag_name": {
           "type": "string",
@@ -556,10 +465,7 @@
     },
     "audio": {
       "type": "object",
-      "required": [
-        "audio_name",
-        "audio_url"
-      ],
+      "required": ["audio_name", "audio_url"],
       "properties": {
         "audio_name": {
           "type": "string",
@@ -573,10 +479,7 @@
     },
     "search": {
       "type": "object",
-      "required": [
-        "audio_name",
-        "tag_name"
-      ],
+      "required": ["audio_name", "tag_name"],
       "properties": {
         "audio_name": {
           "type": "string",
@@ -590,9 +493,7 @@
     },
     "user": {
       "type": "object",
-      "required": [
-        "user_email"
-      ],
+      "required": ["user_email"],
       "properties": {
         "user_email": {
           "type": "string",
@@ -602,9 +503,7 @@
     },
     "topic": {
       "type": "object",
-      "required": [
-        "topic_name"
-      ],
+      "required": ["topic_name"],
       "properties": {
         "topic_name": {
           "type": "string",
@@ -614,11 +513,7 @@
     },
     "review": {
       "type": "object",
-      "required": [
-        "user_name",
-        "audio_name",
-        "comment"
-      ],
+      "required": ["user_name", "audio_name", "comment"],
       "properties": {
         "user_email": {
           "type": "string",

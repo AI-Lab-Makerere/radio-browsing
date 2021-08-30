@@ -1,5 +1,6 @@
 from flask_restful import Api
-from app.controllers import ( IndexView, TagView, TagSearchView, TopicSearchView, AudioView, CommentView, UserView, AudioTagView, TopicView)
+from app.controllers import (IndexView, TagView, TagSearchView, TopicSearchView,
+                             AudioView, CommentView, UserView, AudioTagView, TopicView)
 
 api = Api()
 
@@ -19,5 +20,5 @@ api.add_resource(CommentView, '/search/reviews', endpoint='reviews')
 api.add_resource(UserView, '/users', endpoint='users')
 # Audio-Tag route
 api.add_resource(AudioTagView, '/search', endpoint='search')
-#Topics route
+# Topics route
 api.add_resource(TopicView, '/search/topics', endpoint='topic')

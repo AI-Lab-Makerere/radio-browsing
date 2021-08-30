@@ -8,30 +8,26 @@ from app.models.root_model import RootModel
 
 
 class User(RootModel):
-    _tablename_= "user"
+    _tablename_ = "user"
 
-    id = db.Column(db.Integer,primary_key=True)
-    user_email = db.Column(db.String(120),nullable=False)
-    
+    id = db.Column(db.Integer, primary_key=True)
+    user_email = db.Column(db.String(120), nullable=False)
 
-
-    def __init__(self,user_email):
+    def __init__(self, user_email):
         """ initialize with email and password """
         self.user_email = user_email
-
 
     def __repr__(self):
         return "<User: {}>".format(self.email)
 
-    
     def serialize(self):
         return {
-        'id': self.id
+            'id': self.id
         }
 
     @property
     def transform(self):
         return {
-        'id': self.id,
-        'user_email': self.user_email 
+            'id': self.id,
+            'user_email': self.user_email
         }

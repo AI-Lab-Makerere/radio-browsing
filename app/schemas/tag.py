@@ -1,5 +1,6 @@
 from marshmallow import Schema, fields, validate
 
+
 class TagInSchema(Schema):
     id = fields.Integer(dump_only=True)
     tag_name = fields.String(required=True)
@@ -9,10 +10,10 @@ class TagInSchema(Schema):
             validate.Regexp(
                 regex=r'^(?!\s*$)', error='Topic Name should be a valid string'
             ),
-        ])
+    ])
+
 
 class TagOutSchema(Schema):
     id = fields.Integer(dump_only=True)
     tag_name = fields.String(required=True)
     topic_id = fields.Integer(required=True)
-        
