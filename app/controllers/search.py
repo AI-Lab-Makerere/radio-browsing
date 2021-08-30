@@ -13,12 +13,12 @@ class TagSearchView(Resource):
     def post(self):
         data = request.get_json()
         name = data["tag_name"]
-        #print(name)
+        
         tagschema = TagInSchema()
 
         tag = Tag.find_first(tag_name=name)
         audios = Audio.find_all()
-        #print(tag)
+        
         if not tag:
             return dict(status="fail", message=f"Tag with name {name} does not exist!"), 404
 
@@ -29,40 +29,25 @@ class TagSearchView(Resource):
         tag_name = tdata["tag_name"]
 
         all_data["Tag"] = tag_name
-        #print(f"TagID: {tag_id} TagName: {tag_name}")
         
         rel_audio_ids = AudioTag.find_all(tag_id=tag_id)
-        #print(rel_audio_ids)
-        #print(len(rel_audio_ids))
+
 
         for value in range(len(rel_audio_ids)):
 
             value_dict = rel_audio_ids[value].transform
 
             audio_id = value_dict["audio_id"]
-            #print(audio_id)
 
             audio_data = Audio.find_first(id=audio_id)
-            #print(audio_data)
 
             audio_dict = audio_data.transform
             audio_name = audio_dict["audio_name"]
             audio_url = audio_dict["audio_url"]
-            #print(audio_name)
+            
             all_data["Audios"].append(audio_name)
             all_data["Audio_URLs"].append(audio_url)
-            """
-            if value == 0:
-                #print(audios[rel_audio_ids[0].serialize()].audio_name)
-                print(rel_audio_ids[value].transform)
-            else:
-                #print(audios[rel_audio_ids[value].transform()].audio_name)
-                print(rel_audio_ids[value].transform)
-            """
-            #all_data["Audios"].append(audios[rel_audio_ids[value].serialize()].audio_name)
 
-        #print(all_data)
-        #return "success" , 200
         return dict(status = "success",data = all_data), 200
 
 
@@ -72,7 +57,6 @@ class TopicSearchView(Resource):
     def post(self):
         data = request.get_json()
         name = data["topic_name"]
-        #print(name)
         
         topic = Topic.find_first(topic_name=name)
         
@@ -88,17 +72,13 @@ class TopicSearchView(Resource):
         all_data["Topic"] = topic_name
 
         rel_tag_ids = Tag.find_all(topic_id=topic_id)
-        #print(rel_tag_ids)
 
         for tag in range(len(rel_tag_ids)):
             tag_value = rel_tag_ids[tag].transform
             tag_id = tag_value["id"]
-            #tag_name = tag_value["tag_name"]
 
-            #print(f"ID: {tag_id} Name:{tag_name}") 
 
             rel_audio_ids = AudioTag.find_all(tag_id=tag_id)
-            #print(rel_audio_ids)
 
             if len(rel_audio_ids) == 1:
                 #for one audio get individual audio details
@@ -107,13 +87,11 @@ class TopicSearchView(Resource):
                 audio_id = rel_audio["audio_id"]
 
                 audio_data = Audio.find_first(id=audio_id)
-                #print(audio_data)
 
                 audio_dict = audio_data.transform
 
                 audio_name = audio_dict["audio_name"]
                 audio_url = audio_dict["audio_url"]
-                #print(audio_name)
 
                 all_data["Audios"].append(audio_name)
                 all_data["Audio_URLs"].append(audio_url)
@@ -126,20 +104,18 @@ class TopicSearchView(Resource):
                     audio_id = rel_audio["audio_id"]
 
                     audio_data = Audio.find_first(id=audio_id)
-                    #print(audio_data)
 
                     audio_dict = audio_data.transform
 
                     audio_name = audio_dict["audio_name"]
                     audio_url = audio_dict["audio_url"]
-                    #print(audio_name)
 
                     all_data["Audios"].append(audio_name)
                     all_data["Audio_URLs"].append(audio_url)
 
             else:
                 #if tags have no audios attached
-                #print("NO audios attached")
+                
                 continue
 
         seen_audio = set()
@@ -151,9 +127,6 @@ class TopicSearchView(Resource):
                 unique_audio.append(all_data["Audios"][x])
                 seen_audio.add(all_data["Audios"][x])
 
-        #print(all_data)
-        #print(unique_audio)
-        #print(seen_audio)
 
         #update list after removing duplicate audios
         all_data["Audios"] = unique_audio

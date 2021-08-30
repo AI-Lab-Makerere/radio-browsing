@@ -64,20 +64,6 @@ class CommentView(Resource):
     def get(self):
         #returns all comments about all audios
         comments = Comment.find_all()
-        #print(comments)
-        #print(len(comments))
-
-        """
-        comment_schema = CommentOutSchema(many=True)
-
-
-        comments_data, errors = comment_schema.dumps(comments)
-
-        if errors:
-            return dict(status="fail", message="Internal Server Error"), 500
-
-        return dict(status="success", data=dict(comments=json.loads(comments_data))), 200
-        """
 
         all_data = {"Audio": [], "Comments": [], "User": []}       
         
@@ -99,8 +85,6 @@ class CommentView(Resource):
 
             user_email = user_dict["user_email"]
             audio_name = audio_dict["audio_name"]
-
-            print(f"User: {user_email} Audio: {audio_name}")
             
             all_data["Audio"].append(audio_name)
             all_data["User"].append(user_email)

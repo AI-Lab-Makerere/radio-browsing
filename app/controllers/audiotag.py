@@ -27,35 +27,32 @@ class AudioTagView(Resource):
             ntag = AudioTag.find_all(audio_id=value)
             ntags.append(ntag)
             s_tag = []
-            #print("Audio {}:".format(value), audios[value-1].audio_name)
+            
             s_tag.append(audios[value-1].audio_name)
             all_data["Audio"].append(audios[value-1].audio_name)
-            #print("STag Array:", s_tag)
-            # print(ntag)
+            
             multi_tag = []
 
             for mtag in range(len(ntag)):
 
-                # print(ntag[mtag].serialize())
+                
                 val = ntag[mtag].serialize()
-                # print(tags[int(ntag[mtag])])
-                #print(tags[val-1].name)
+                
                 multi_tag.append(tags[val-1].tag_name)
-                #print("MultiTaG Array:", multi_tag)
-            # s_tag.append(multi_tag)
+                
+            
             all_data["Tags"].append(multi_tag)
-            # all_data["Audio"].append(audios[value-1].audio)
+            
 
-        #print(all_data)
 
         tags_data, errors = tag_schema.dumps(all_data)
-        #print(tags_data)
+        
         
         if errors:
             return dict(status="fail", message="Internal Server Error"), 500
 
         return dict(status="success", data=all_data), 200
-        # return "success", 200
+        
 
     # searches for particular audio then adds tag to it
     def post(self):
