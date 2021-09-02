@@ -11,7 +11,7 @@ const Results = (props) => {
         await API.get('/search/audios')
             .then((response) => {
                 setAudios(response.data.data.audios)
-                //console.log(response.data.data.Audios)
+                console.log(response.data.data.audios)
                 setLoading(false)
                 //console.log(`lenght ${audios.length}`)
             })
@@ -108,9 +108,9 @@ const Results = (props) => {
             <div className="container position-relative" data-aos="fade-up" data-aos-delay="100">
                 <div className="row icon-boxes">
                     {audios.length > 0 ? audios.map((audio) => (   
-                        <AudioCard id={audio.id} name={audio.audio_name} />
+                        <AudioCard id={audio.id} name={audio.audio_name} audio_url={audio.audio_url}/>
                     ))
-                    : <h2 style={{marginTop:'100px', color:'black'}}>No such Audios</h2> 
+                    : <h2 style={{marginTop:'100px', color:'black'}}>No Audios Available!</h2> 
                     }
                 </div>
             </div>

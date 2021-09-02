@@ -12,7 +12,7 @@ const AudioCard = (props) => {
                 </div>
 
                 <audio className="audio" preload="auto" controls style={{ marginLeft: '-13px' }}>
-                    <source src="assets/audio/dummy-audio.mp3" />
+                    <source src={props.audio_url} />
                 </audio>
 
                 <ListGroup className="list-group-flush" style={{ border: 'none' }}>
