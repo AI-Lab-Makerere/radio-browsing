@@ -6,28 +6,30 @@ import "./style.css"
 const Home = () => {
 
     const [mode, setMode] = useState(false)
-    const [searchTerm, setSearchTerm] = useState("")
+    const [searchTerm, setSearchTerm] = useState([])
+    const [searchTag, setSearchTag] = useState(null)
     const [searchTopic, setSearchTopic] = useState("")
+    const [searchLink, setSearchLink] = useState("")
 
     const handleSearch = (event) => {
         setSearchTerm(event.target.value)
     }
 
     const redirectTag = () => {
-        if (searchTerm && searchTopic === "") {
+        if (searchTag !== null) {
             return (
                 <Redirect to={{
                     pathname: "/results",
-                    search: `search_?tag=name+${searchTerm}_id`,
-                    state: { tag_name: searchTerm }
+                    search: `search_?tag=name+${searchLink}_id`,
+                    state: { tag_name: searchTag }
                 }} />
             )
         }
-        else if (searchTerm === searchTopic) {
+        else if (searchTopic !== "") {
             return (
                 <Redirect to={{
                     pathname: "/results",
-                    search: `search_?topic=name+${searchTopic}_id`,
+                    search: `search_?topic=name+${searchLink}_id`,
                     state: { topic_name: searchTopic }
                 }} />
             )
@@ -39,13 +41,52 @@ const Home = () => {
         }
     }
 
+    const changeForTag = (array, link) => {
+        setSearchTag(array)
+        setSearchLink(link)
+    }
+
+    const changeForTopic = (array, link) => {
+        setSearchTopic(array)
+        setSearchLink(link)
+    }
+
     const submitSearchTerm = () => {
-        //console.log(searchTerm)
+
+        if (searchTerm.includes(" ")) {
+            //console.log("it has a space")
+            let words = searchTerm.split(" ")
+
+            let link = words.join("+")
+
+            changeForTag(words, link)
+
+        } else {
+            /* console.log("it has no space") */
+            changeForTag(searchTerm, searchLink)
+        }
         setMode(true)
     }
 
     const submitTopic = () => {
-        setSearchTopic(searchTerm)
+        //setSearchTopic(searchTerm)
+
+        if (searchTerm.includes(" ")) {
+            //console.log("it has a space")
+            let words = searchTerm.split(" ")
+            //console.log(words)
+            let link = words.join("+")
+            //console.log(link)
+
+            changeForTopic(words, link)
+
+            /* console.log("Searchterm",searchTerm)
+            console.log("Searchlink",searchLink)
+            console.log("SearchTag",searchTag) */
+        } else {
+            /* console.log("it has no space") */
+            changeForTopic(searchTerm, searchLink)
+        }
         setMode(true)
     }
 
