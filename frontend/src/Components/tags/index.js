@@ -29,7 +29,7 @@ const Tags = () => {
   })
 
   const moveTag = (item) => {
-    console.log(item);
+    //console.log(item);
     if (item && item.type === "tag") {
       //Accepting tag into selected
       setSelected((_selected) => [..._selected, tags[item.index]]);
