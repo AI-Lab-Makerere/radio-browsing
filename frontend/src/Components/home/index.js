@@ -45,28 +45,23 @@ const Home = () => {
         setSearchTag(array)
         setSearchLink(link)
     }
-    
+
     const changeForTopic = (array, link) => {
         setSearchTopic(array)
         setSearchLink(link)
     }
 
     const submitSearchTerm = () => {
-        //console.log(searchTerm)
-        
+
         if (searchTerm.includes(" ")) {
             //console.log("it has a space")
             let words = searchTerm.split(" ")
-            //console.log(words)
+
             let link = words.join("+")
-            //console.log(link)
-            
+
             changeForTag(words, link)
-            
-            /* console.log("Searchterm",searchTerm)
-            console.log("Searchlink",searchLink)
-            console.log("SearchTag",searchTag) */ 
-        }else {
+
+        } else {
             /* console.log("it has no space") */
             changeForTag(searchTerm, searchLink)
         }
@@ -82,13 +77,13 @@ const Home = () => {
             //console.log(words)
             let link = words.join("+")
             //console.log(link)
-            
+
             changeForTopic(words, link)
-            
+
             /* console.log("Searchterm",searchTerm)
             console.log("Searchlink",searchLink)
-            console.log("SearchTag",searchTag) */ 
-        }else {
+            console.log("SearchTag",searchTag) */
+        } else {
             /* console.log("it has no space") */
             changeForTopic(searchTerm, searchLink)
         }
